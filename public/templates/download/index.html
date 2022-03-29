@@ -1,0 +1,23 @@
+{{ define "download/index.tmpl" }}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FileShare</title>
+</head>
+<body>
+<h1>Download Your File</h1>
+    {{if not .Files}}
+        <p>This file does not exist.</p>
+    {{else}}
+        {{range .Files}}
+            <a href="{{ .URL }}" >{{.Name}} ({{.Size}} bytes)</a>
+        {{end}}
+        <img src="data:image/png;base64,{{ .QR }}" width="128" height="128" class="mt-8">
+    {{end}}
+    <div class="mt-12">
+        <a href="/" class="btn-dark">Upload another</a>
+    </div>
+
+</body>
+{{ end }}
