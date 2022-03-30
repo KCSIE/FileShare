@@ -4,20 +4,35 @@
 <head>
     <meta charset="utf-8">
     <title>FileShare</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Download Your File</h1>
-    {{if not .Files}}
-        <p>This file does not exist.</p>
-    {{else}}
-        {{range .Files}}
-            <a href="{{ .URL }}" >{{.Name}} ({{.Size}} bytes)</a>
-        {{end}}
-        <img src="data:image/png;base64,{{ .QR }}" width="128" height="128" class="mt-8">
-    {{end}}
-    <div class="mt-12">
-        <a href="/" class="btn-dark">Upload another</a>
+    <div class="jumbotron text-center">
+        <h1>FileShare</h1>
+        <br>
+        <h3>Share Your Link Or QRcode To Download Your Files!</h3>
     </div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="m-auto">
+                {{if not .Files}}
+                    <p>This file does not exist.</p>
+                {{else}}
+                    {{range .Files}}
+                        <a href="{{ .URL }}" class="row">{{.Name}} ({{.Size}} bytes)</a>
+                        <br>
+                    {{end}}
+                    <br>
+                    <img src="data:image/png;base64,{{ .QR }}" width="128" height="128" class="mt-8 row">
+                {{end}}
+                <br>
+                <br>
+                <div class="row">
+                    <a href="/" class="btn btn-secondary btn-lg btn-block">Upload another</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 {{ end }}

@@ -4,13 +4,25 @@
 <head>
     <meta charset="utf-8">
     <title>FileShare</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Upload Your File</h1>
-
-<form action="/v1/upload" method="post" enctype="multipart/form-data">
-    Files: <input type="file" name="files" multiple><br><br>
-    <input type="submit" value="Submit">
-</form>
+    <div class="jumbotron text-center">
+        <h1>FileShare</h1>
+        <br>
+        <h3>Upload Your File And Get The Link!</h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="m-auto">
+                <form action="/v1/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="files" id="file" class="row" data-multiple-caption="{count} files selected" multiple required>
+                    <br><br>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block row">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 {{ end }}
