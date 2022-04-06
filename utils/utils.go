@@ -1,14 +1,13 @@
 package utils
 
 import (
+	"fileshare/bootstrap"
 	"log"
 	"math/rand"
 	"time"
 
 	"github.com/skip2/go-qrcode"
 )
-
-const curHost = "https://127.0.0.1:8080" // don't forget to change
 
 func CreateRoute(id,route string) string {
 	return "/v1/"+ route + "/" + id
@@ -26,7 +25,7 @@ func GenerateID(length int) string {
 
 func CreateQR(url string) []byte {
 	var png []byte
-	qr, err := qrcode.New(curHost+url, qrcode.Medium) 
+	qr, err := qrcode.New(bootstrap.App.Config.App.AppUrl+url, qrcode.Medium) 
 	if err != nil {
 		log.Println("Unable to create QR code: ", err)
 	}

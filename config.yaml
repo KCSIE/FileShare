@@ -1,0 +1,5 @@
+app: # config
+  env: local # env name
+  port: 8080 # listening port
+  app_name: gin-app # app name
+  app_url: https://127.0.0.1:8080 # host name

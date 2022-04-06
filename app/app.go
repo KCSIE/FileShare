@@ -1,11 +1,11 @@
 package app
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 
+	"fileshare/bootstrap"
 	"fileshare/controller"
 	"fileshare/dao"
 	"fileshare/router"
@@ -19,7 +19,7 @@ type Server struct {
 
 func (s *Server) Start() {
 	s.apiRouter.With(s.engine)
-	err := s.engine.Run(fmt.Sprintf(":%d", 8080))
+	err := s.engine.Run(":"+bootstrap.App.Config.App.Port)
 	if err != nil {
 		panic(err)
 	}
