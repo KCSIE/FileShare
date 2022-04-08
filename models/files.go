@@ -10,6 +10,7 @@ type File struct {
 	MediaType  string    `json:"media_type"`
 	UploadDate time.Time `json:"upload_date"`
 	URL        string    `json:"url"`
+	State      bool      `json:"state"`
 }
 
 type FileGroup struct {

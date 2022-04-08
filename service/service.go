@@ -12,6 +12,7 @@ import (
 	"mime/multipart"
 	"os"
 	"time"
+	"github.com/robfig/cron"
 )
 
 type fileService struct {
@@ -48,12 +49,13 @@ func (f fileService) UploadFile(fileGroupID string, file multipart.File, header 
 	Buf.Reset()
 	fileData := models.File{
 		ID:         id,
-		GroupId:      fileGroupID,
+		GroupId:    fileGroupID,
 		Name:       header.Filename,
 		Size:       header.Size,
 		MediaType:  header.Header.Get("Content-Type"),
 		UploadDate: time.Now(),
-		URL:        utils.CreateRoute(id, "download"),     
+		URL:        utils.CreateRoute(id, "download"),  
+		State:      true ,   
 	}
 	log.Println("Uploaded file:", fileData)
 	return f.FileRepository.SaveFile(fileData)
@@ -68,4 +70,20 @@ func (f fileService) ViewFileGroup(id string) models.FileGroup {
 func (f fileService) DownloadFile(id string) models.File {
 	file := f.FileRepository.GetFile(id)
 	return file
+}
+
+func CleanUp() {
+	c := cron.New()
+	c.AddFunc("0 0 0 * * *", func() {
+		log.Println("Clean up every day at midnight")
+		dao.CleanDB()
+		os.RemoveAll("uploads")
+	})
+	c.Start()
+	defer c.Stop()
+	select {}
+}
+
+func init() {
+	go CleanUp()
 }

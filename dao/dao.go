@@ -9,7 +9,7 @@ import (
 type FileRepository interface {
 	SaveFile(file models.File) models.File   
 	GetFileGroup(id string) models.FileGroup 
-	GetFile(id string) models.File           
+	GetFile(id string) models.File   
 }
 
 type fileRepository struct {
