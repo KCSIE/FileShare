@@ -26,6 +26,7 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/ini.v1 v1.66.2 // indirect
+	src.techknowlogick.com/xgo v1.4.1-0.20220316200431-2a44f0ae5de2 // indirect
 )
 
 require (

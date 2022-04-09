@@ -122,3 +122,5 @@ gorm.io/driver/sqlite v1.3.1/go.mod h1:wJx0hJspfycZ6myN38x1O/AqLtNS6c5o9TndewFbE
 gorm.io/gorm v1.23.1/go.mod h1:l2lP/RyAtc1ynaTjFksBde/O8v9oOGIApu2/xRitmZk=
 gorm.io/gorm v1.23.3 h1:jYh3nm7uLZkrMVfA8WVNjDZryKfr7W+HTlInVgKFJAg=
 gorm.io/gorm v1.23.3/go.mod h1:l2lP/RyAtc1ynaTjFksBde/O8v9oOGIApu2/xRitmZk=
+src.techknowlogick.com/xgo v1.4.1-0.20220316200431-2a44f0ae5de2 h1:hd5SuUUAM3/PAxVAKBKPFGYxVmZ0oc3y9ywvyU4r524=
+src.techknowlogick.com/xgo v1.4.1-0.20220316200431-2a44f0ae5de2/go.mod h1:31CE1YKtDOrKTk9PSnjTpe6YbO6W/0LTYZ1VskL09oU=
