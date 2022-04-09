@@ -16,7 +16,7 @@ FileShare, a web app based on gin &amp; gorm for file sharing.
 
    Then you will get the executable file (I named it fileshare).
 
-2. Upload `the executable file`, `config.yaml`, `the public folder` to somewhere. I moved them t o `/home/fileshare/` of my server.
+2. Upload `the executable file`, `config.yaml`, `the public folder` to somewhere. I moved them to `/home/fileshare/` of my server.
 
 3. Configure the IP(or domain name) and port in `config.yaml`.
 
